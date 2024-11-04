@@ -1,0 +1,228 @@
+[
+    {
+      "product_id": "L001",
+      "product_title": "Gaming Laptop Pro",
+      "product_image": "https://i.ibb.co.com/MZkhD4g/Gaming-Laptop-Pro.jpg",
+      "category": "Laptop",
+      "price": 1499.99,
+      "description": "High-performance gaming laptop with an RGB keyboard and powerful GPU.",
+      "specification": [
+        "Intel Core i9 Processor",
+        "32GB RAM",
+        "1TB SSD",
+        "NVIDIA GeForce RTX 3070"
+      ],
+      "availability": true,
+      "rating": 4.8,
+      "brand": "PowerGamer",
+      "battery_life": "5 hours",
+      "color": "Black",
+      "warranty": "2 years"
+    },
+    {
+      "product_id": "L002",
+      "product_title": "Ultrabook Slim",
+      "product_image": "https://i.ibb.co.com/ZNHP956/Ultrabook-Slim.jpg",
+      "category": "Laptop",
+      "price": 999.99,
+      "description": "Lightweight laptop for work and travel with a sleek design.",
+      "specification": [
+        "Intel Core i5 Processor",
+        "8GB RAM",
+        "256GB SSD",
+        "Intel UHD Graphics"
+      ],
+      "availability": true,
+      "rating": 4.4,
+      "brand": "LiteTech",
+      "battery_life": "10 hours",
+      "color": "Silver",
+      "dimensions": "13 x 8.5 x 0.6 inches"
+    },
+    {
+      "product_id": "P001",
+      "product_title": "Smartphone X1",
+      "product_image": "https://i.ibb.co.com/wcXpLyq/Smartphone-X1.jpg",
+      "category": "Phone",
+      "price": 799.99,
+      "description": "5G smartphone with advanced camera and fast processing.",
+      "specification": [
+        "6.5-inch display",
+        "128GB Storage",
+        "5G-enabled",
+        "Triple-lens camera"
+      ],
+      "availability": true,
+      "rating": 4.5,
+      "brand": "SmartTech",
+      "color": "Black",
+      "warranty": "1 year"
+    },
+    {
+      "product_id": "P002",
+      "product_title": "Basic Smartphone A10",
+      "product_image": "https://i.ibb.co.com/7K3w8wy/Basic-Smartphone-A10.jpg",
+      "category": "Phone",
+      "price": 199.99,
+      "description": "Affordable smartphone with all essential features.",
+      "specification": [
+        "5.5-inch display",
+        "32GB Storage",
+        "4G-enabled",
+        "Single-lens camera"
+      ],
+      "availability": true,
+      "rating": 4.0,
+      "brand": "EveryDayPhone",
+      "color": "Blue"
+    },
+    {
+      "product_id": "A001",
+      "product_title": "Wireless Earbuds",
+      "product_image": "https://i.ibb.co.com/FqDGfxR/Wireless-Earbuds.jpg",
+      "category": "Accessories",
+      "price": 59.99,
+      "description": "High-quality earbuds with noise-canceling and water resistance.",
+      "specification": [
+        "Bluetooth 5.1",
+        "Noise Cancellation",
+        "Battery life: 8 hours"
+      ],
+      "availability": true,
+      "rating": 4.3,
+      "brand": "SoundFree",
+      "color": "White",
+      "warranty": "6 months"
+    },
+    {
+      "product_id": "A002",
+      "product_title": "Portable Charger 20000mAh",
+      "product_image": "https://i.ibb.co.com/tKMD2Qx/Portable-Charger-20000m-Ah.jpg",
+      "category": "Accessories",
+      "price": 29.99,
+      "description": "Fast-charging portable battery with dual USB ports.",
+      "specification": [
+        "Capacity: 20000mAh",
+        "Dual USB-A ports",
+        "LED power indicator"
+      ],
+      "availability": true,
+      "rating": 4.6,
+      "brand": "ChargeHub",
+      "color": "Black",
+      "dimensions": "6.5 x 3 x 0.9 inches"
+    },
+    {
+      "product_id": "SW001",
+      "product_title": "Smartwatch Active",
+      "product_image": "https://i.ibb.co.com/gzWbrLy/Smartwatch-Active.jpg",
+      "category": "Smart Watch",
+      "price": 129.99,
+      "description": "Fitness-focused smartwatch with heart rate monitor and GPS.",
+      "specification": [
+        "Heart rate tracking",
+        "GPS-enabled",
+        "Water-resistant up to 50m"
+      ],
+      "availability": true,
+      "rating": 4.7,
+      "brand": "FitPulse",
+      "battery_life": "7 days",
+      "compatible_os": "iOS & Android"
+    },
+    {
+      "product_id": "SW002",
+      "product_title": "Classic Smartwatch",
+      "product_image": "https://i.ibb.co.com/3YxyHnT/Classic-Smartwatch.jpg",
+      "category": "Smart Watch",
+      "price": 179.99,
+      "description": "Stylish smartwatch with customizable watch faces.",
+      "specification": [
+        "Step tracking",
+        "Sleep monitoring",
+        "Voice assistant"
+      ],
+      "availability": false,
+      "rating": 4.3,
+      "brand": "SmartTime",
+      "battery_life": "5 days",
+      "color": "Rose Gold"
+    },
+    {
+      "product_id": "MB001",
+      "product_title": "MacBook Air M1",
+      "product_image": "https://i.ibb.co.com/YQxtN7H/Mac-Book-Air-M1.jpg",
+      "category": "MacBook",
+      "price": 999.99,
+      "description": "Lightweight and powerful laptop with Apple M1 chip.",
+      "specification": [
+        "Apple M1 Chip",
+        "8GB RAM",
+        "256GB SSD",
+        "13.3-inch Retina Display"
+      ],
+      "availability": true,
+      "rating": 4.8,
+      "brand": "Apple",
+      "battery_life": "18 hours",
+      "color": "Space Gray"
+    },
+    {
+      "product_id": "MB002",
+      "product_title": "MacBook Pro M1",
+      "product_image": "https://i.ibb.co.com/9VRcyNt/Mac-Book-Pro-M1.jpg",
+      "category": "MacBook",
+      "price": 1299.99,
+      "description": "Professional laptop with powerful Apple M1 Pro chip.",
+      "specification": [
+        "Apple M1 Pro Chip",
+        "16GB RAM",
+        "512GB SSD",
+        "14-inch Retina Display"
+      ],
+      "availability": true,
+      "rating": 4.9,
+      "brand": "Apple",
+      "battery_life": "20 hours",
+      "color": "Silver"
+    },
+    {
+      "product_id": "IP001",
+      "product_title": "iPhone 13",
+      "product_image": "https://i.ibb.co.com/KmKnHYz/iphone13.jpg",
+      "category": "iPhone",
+      "price": 799.99,
+      "description": "Latest iPhone with advanced camera and A15 Bionic chip.",
+      "specification": [
+        "6.1-inch Super Retina XDR",
+        "128GB Storage",
+        "5G-enabled",
+        "Dual-lens camera"
+      ],
+      "availability": true,
+      "rating": 4.8,
+      "brand": "Apple",
+      "color": "Midnight",
+      "warranty": "1 year"
+    },
+    {
+      "product_id": "IP002",
+      "product_title": "https://i.ibb.co.com/Nprmnp2/iphoneSE.jpg",
+      "product_image": "https://example.com/images/iphone_se.jpg",
+      "category": "iPhone",
+      "price": 429.99,
+      "description": "Affordable iPhone with A15 Bionic chip and compact design.",
+      "specification": [
+        "4.7-inch Retina HD",
+        "64GB Storage",
+        "5G-enabled",
+        "Single-lens camera"
+      ],
+      "availability": true,
+      "rating": 4.4,
+      "brand": "Apple",
+      "color": "Red",
+      "warranty": "1 year"
+    }
+  ]
+  
