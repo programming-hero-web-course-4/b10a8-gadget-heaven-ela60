@@ -4,15 +4,15 @@ const Card = ({ product }) => {
   const { product_title, product_image, price, product_id } = product || {};
 
   return (
-    <>
-      <div className="flex relative">
+   
+      <div className="flex relative w-full">
         <Link
           to={`/statics/${product_id}`}
-          className="transition hover:scale-125 shadow-xl rounded-xl  overflow-hidden"
+          className="transition hover:scale-100 shadow-xl rounded-xl  overflow-hidden w-full"
         >
           <figure className="w-full h-52 overflow-hidden">
             <img
-              className="w-full  object-cover"
+              className="w-full  md:h-60 rounded-xl object-cover"
               src={product_image}
               alt="product"
             />
@@ -30,7 +30,7 @@ const Card = ({ product }) => {
           </div>
         </Link>
       </div>
-    </>
+   
   );
 };
 

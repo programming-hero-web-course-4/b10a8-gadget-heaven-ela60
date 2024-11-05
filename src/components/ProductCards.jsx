@@ -23,15 +23,15 @@ const ProductCards = () => {
     return (
         <div className="flex gap-6  py-12">
            
-            <div role="tablist" className="tabs tabs-boxed lg:w-1/4 py-12">
+            <div role="tablist" className="tabs tabs-boxed lg:w-1/4 border flex flex-col gap-4 py-12 items-center font-semibold">
               
                 <NavLink
                     to="/"  
                     role="tab"
                     className={({ isActive }) =>
-                        `tab text-xl font-thin ${isActive ? "tab-active" : ""}`
+                        `tab text-xl border-2  border-[#9538E2]  ${isActive ? "tab-active" : ""}`
                     }
-                    end 
+                   
                 >
                     All Products
                 </NavLink>
@@ -43,7 +43,7 @@ const ProductCards = () => {
                         to={`/category/${category.category_name}`}
                         role="tab"
                         className={({ isActive }) =>
-                            `tab text-xl font-thin ${isActive ? "tab-active" : ""}`
+                            `tab text-xl border-2 border-[#9538E2] ${isActive ? "tab-active" : ""}`
                         }
                     >
                         {category.category_name}
