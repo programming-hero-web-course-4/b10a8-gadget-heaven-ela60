@@ -114,12 +114,12 @@ const Details = () => {
               </button>
 
               <button 
-                onClick={handleAddToWishlist} 
-                className={`btn rounded-3xl ${isInWishlist ? "bg-gray-300" : "bg-[#9538E2]"} text-white px-4 py-2`} 
-                disabled={isInWishlist} // Disable  wishlist
-            >
-                {isInWishlist ? "Added to Wishlist" : "Add to Wishlist ♥"}
-            </button>
+            onClick={handleAddToWishlist} 
+            className={`btn rounded-3xl ${isInWishlist ? "bg-gray-300" : "bg-[#9538E2]"} text-white px-4 py-2`} 
+            disabled={isInWishlist} 
+        >
+            {isInWishlist ? "Added to Wishlist" : "Add to Wishlist ♥"}
+        </button>
              
             </div>
           </div>

@@ -6,6 +6,7 @@ import Statics from "../pages/Statics";
 import Dashboard from "../pages/Dashboard";
 import ProductCards from "../components/ProductCards";
 import Details from "../components/Details";
+import NewPage from "../components/NewPage";
 
 const routes = createBrowserRouter([
     {
@@ -39,6 +40,11 @@ const routes = createBrowserRouter([
             {
                 path: '/dashboard',
                 element:<Dashboard/>
+            },
+            {
+                path: '/new-page',
+                element:<NewPage/>
+                   
             },
             {
                 path: 'product/:product_id',

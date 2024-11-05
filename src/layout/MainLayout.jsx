@@ -4,11 +4,11 @@ import Footer from '../components/Footer';
 import { Outlet } from 'react-router-dom';
 
 const MainLayout = () => {
-    // State for cart and wishlist counts
+    
     const [cartCount, setCartCount] = useState(0);
     const [wishlistCount, setWishlistCount] = useState(0);
 
-    // Handlers to update counts
+ 
     const handleAddToCart = () => {
         setCartCount(prevCount => prevCount + 1);
     };
@@ -19,12 +19,12 @@ const MainLayout = () => {
 
     return (
         <div>
-            {/* Navbar with counts passed as props */}
+          
             <Navbar 
                 cartCount={cartCount} 
                 wishlistCount={wishlistCount} 
             />
-            <div className='min-h-[calc(100vh-232px)] py-12 container mx-auto px-12'>
+            <div className='min-h-[calc(100vh-232px)] py-12  container mx-auto px-12'>
                 {/* Dynamic content goes here */}
                 <Outlet context={{ handleAddToCart, handleAddToWishlist }} />
             </div>

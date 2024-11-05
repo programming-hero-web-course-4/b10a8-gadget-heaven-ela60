@@ -1,6 +1,7 @@
 
 import { Outlet, useLoaderData } from "react-router-dom";
 import Banner from "../components/Banner";
+import BannerImg from "../components/BannerImg";
 
 const Home = () => {
     const categories = useLoaderData(); 
@@ -9,6 +10,7 @@ const Home = () => {
         <div>
             {/* banner */}
             <Banner />
+            <BannerImg/>
 
             {/* categories tab section */}
            
