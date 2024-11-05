@@ -1,16 +1,20 @@
-import Banner from "../components/Banner";
-import Heading from "../components/Heading";
 
+import { Outlet, useLoaderData } from "react-router-dom";
+import Banner from "../components/Banner";
 
 const Home = () => {
+    const categories = useLoaderData(); 
+
     return (
         <div>
             {/* banner */}
-            <Banner/>
-            {/* heading */}
-            <Heading title={'title'} subtitle={'sub'}/>
+            <Banner />
+
             {/* categories tab section */}
-            {/* Dynamice nested components */}
+           
+
+            {/* Dynamically render products for selected category */}
+            <Outlet context={{ categories }} /> {/* Pass categories via Outlet context */}
         </div>
     );
 };

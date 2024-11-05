@@ -1,0 +1,33 @@
+[
+    {
+      "category_id": "C001",
+      "category_name": "Laptop",
+      "description": "Portable computers suitable for work, study, and gaming."
+    },
+    {
+      "category_id": "C002",
+      "category_name": "Phone",
+      "description": "Smartphones with various features, suitable for communication and media consumption."
+    },
+    {
+      "category_id": "C003",
+      "category_name": "Accessories",
+      "description": "Essential and optional add-ons for devices, such as chargers and headphones."
+    },
+    {
+      "category_id": "C004",
+      "category_name": "Smart Watch",
+      "description": "Wearable devices for tracking fitness, receiving notifications, and more."
+    },
+    {
+      "category_id": "C005",
+      "category_name": "MacBook",
+      "description": "Apple's line of laptops, known for their performance and build quality."
+    },
+    {
+      "category_id": "C006",
+      "category_name": "iPhone",
+      "description": "Apple's smartphone line, known for its camera quality and iOS ecosystem."
+    }
+  ]
+  
