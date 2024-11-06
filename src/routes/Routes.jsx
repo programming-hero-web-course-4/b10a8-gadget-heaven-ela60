@@ -7,12 +7,13 @@ import Dashboard from "../pages/Dashboard";
 import ProductCards from "../components/ProductCards";
 import Details from "../components/Details";
 import NewPage from "../components/NewPage";
+import NotFound from "../components/NotFound";
 
 const routes = createBrowserRouter([
     {
         path: '/',
         element: <MainLayout />,
-        errorElement: <h2 className="text-center text-red-500 py-24">Error:404</h2>,
+        errorElement: <NotFound/>,
         children: [
             {
                 path: '/',
@@ -46,6 +47,7 @@ const routes = createBrowserRouter([
                 element:<NewPage/>
                    
             },
+            
             {
                 path: 'product/:product_id',
                 element: <Details  />,

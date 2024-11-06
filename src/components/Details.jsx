@@ -76,7 +76,7 @@ const Details = () => {
                 </div>
             </div>
 
-            <div className="relative flex flex-col items-center  -mt-40">
+            <div className="relative flex flex-col items-center  md:-mt-40">
     <div className="flex flex-col md:flex-row bg-white shadow-lg rounded-lg overflow-hidden  max-w-md md:max-w-[750px] md:h-[400px]">
         
        
@@ -119,7 +119,7 @@ const Details = () => {
             </div>
 
           
-            <div className="flex flex-col md:flex-row gap-2 -mt-4  ">
+            <div className="flex flex-col md:flex-row gap-2 md:-mt-4  ">
                 <button
                     onClick={handleAddToCart}
                     className="btn rounded-3xl bg-[#9538E2] text-white px-3 py-1 text-sm"
