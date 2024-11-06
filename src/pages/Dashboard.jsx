@@ -78,11 +78,13 @@ const Dashboard = () => {
      
       {activeTab === "Cart" ? (
         <div>
-          <div className="flex flex-col md:flex-row justify-between items-center mb-4">
+          <div className="flex mt-4 flex-col md:flex-row justify-between items-center mb-4">
             <h2 className="text-xl font-semibold">Cart</h2>
+            <h3 className="text-lg font-bold">Total Cost: ${totalCartPrice}</h3>
             <button onClick={sortByPriceDesc} className="text-white bg-[#9538E2] py-1 px-3 rounded-lg mt-2 md:mt-0">
               Sort by Price
             </button>
+           
           </div>
           
           
@@ -110,7 +112,7 @@ const Dashboard = () => {
 
          
           <div className="mt-4 text-center md:text-right">
-            <h3 className="text-lg font-bold">Total Price: ${totalCartPrice}</h3>
+            
             <button
               onClick={handlePurchase}
               disabled={totalCartPrice === 0}
@@ -123,7 +125,7 @@ const Dashboard = () => {
       ) : (
         
         <div>
-          <h2 className="text-xl font-semibold mb-4">Wishlist</h2>
+          <h2 className="text-xl mt-4 font-semibold mb-4">Wishlist</h2>
           <div className="space-y-4">
             {wishlistItems.map((item) => (
               <div key={item.product_id} className="flex flex-col md:flex-row justify-between items-start md:items-center p-4 bg-white shadow-lg rounded-lg">

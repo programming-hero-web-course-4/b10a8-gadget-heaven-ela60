@@ -1,5 +1,5 @@
-import { useLoaderData, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useLoaderData } from "react-router-dom";
+import { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useCart } from "../context/CartContext";
@@ -26,15 +26,19 @@ const StarRating = ({ rating }) => {
 
 const Details = () => {
     const product = useLoaderData();
-    const { addToCart } = useCart();  
-    const { addToWishlist, wishlistItems } = useWishlist();  
-    // const navigate = useNavigate();  
-    
-    const isInWishlist = wishlistItems.find(item => item.product === product.product_id);
+    const { addToCart } = useCart();
+    const { addToWishlist, wishlistItems } = useWishlist();
 
     
+    const [isInWishlist, setIsInWishlist] = useState(false);
+
+    
+    useEffect(() => {
+        setIsInWishlist(wishlistItems.some(item => item.product_id === product.product_id));
+    }, [product, wishlistItems]);
+
     const handleAddToCart = () => {
-        addToCart(product);  
+        addToCart(product);
         toast.success(`${product.product_title} added to cart!`, {
             position: "top-center",
             autoClose: 2000,
@@ -44,7 +48,6 @@ const Details = () => {
             draggable: true,
         });
     };
-
 
     const handleAddToWishlist = () => {
         if (!isInWishlist) {
@@ -64,67 +67,78 @@ const Details = () => {
         <>
             <ToastContainer />
 
-            <div className="hero bg-[#9538E2]">
+            <div className="hero bg-[#9538E2] h-[340px]">
                 <div className="hero-content text-center">
-                    <div className="max-w-md">
+                    <div className="max-w-md md:-mt-20">
                         <h1 className="text-xl lg:text-5xl font-bold">Product Details</h1>
                         <p className="py-6">Explore the latest gadgets...</p>
                     </div>
                 </div>
             </div>
-            <div className="relative flex flex-col items-center py-8">
-                <div className="flex flex-col md:flex-row bg-white shadow-lg rounded-lg overflow-hidden">
-                    <div className="md:w-1/2 p-4">
+
+            <div className="relative flex flex-col items-center  -mt-40">
+    <div className="flex flex-col md:flex-row bg-white shadow-lg rounded-lg overflow-hidden  max-w-md md:max-w-[750px] md:h-[400px]">
+        
+       
+    <div className="md:w-1/2 p-4 overflow-hidden">
                         <img
                             src={product.product_image}
                             alt={product.product_title}
-                            className="w-full object-cover rounded-lg"
+                            className="w-full md:h-[360px] object-cover  rounded-lg"
                         />
                     </div>
 
-                    <div className="md:w-1/2 p-6 space-y-4">
-                        <h2 className="text-3xl font-bold">{product.product_title}</h2>
-                        <p className="text-xl font-semibold text-gray-700">
-                            Price: ${product.price}
-                        </p>
-                        <p>{product.description || "Description not available."}</p>
-                        <div>
-                            <h3 className="font-bold">Specifications:</h3>
-                            <ul className="list-disc ml-5 text-gray-600">
-                                {product.specification?.length > 0 ? (
-                                    product.specification.map((spec, index) => (
-                                        <li key={index}>{spec}</li>
-                                    ))
-                                ) : (
-                                    <li>No specifications available.</li>
-                                )}
-                            </ul>
-                        </div>
+      
+        <div className="md:w-1/2 p-6 flex flex-col justify-between">
+            <h2 className="text-2xl font-bold">{product.product_title}</h2>
+            <p className="text-lg font-semibold text-gray-700">
+                Price: ${product.price}
+            </p>
+            <p className="text-sm text-gray-600">
+                {product.description || "Description not available."}
+            </p>
 
-                        <div>
-                            <h3 className="font-bold">Rating ⭐ </h3>
-                            <StarRating rating={product.rating} />
-                        </div>
-
-                        <div className="flex flex-col lg:flex-row gap-4 mt-8">
-                            <button
-                                onClick={handleAddToCart}  
-                                className="btn rounded-3xl bg-[#9538E2] text-white px-4 py-2"
-                            >
-                                Add to Cart 🛒
-                            </button>
-
-                            <button 
-                                onClick={handleAddToWishlist} 
-                                className={`btn rounded-3xl ${isInWishlist ? "bg-gray-300" : "bg-[#9538E2]"} text-white px-4 py-2`} 
-                                disabled={isInWishlist} 
-                            >
-                                {isInWishlist ? "Added to Wishlist" : "Add to Wishlist ♥"}
-                            </button>
-                        </div>
-                    </div>
-                </div>
+            
+            <div>
+                <h3 className="font-bold text-sm">Specifications:</h3>
+                <ul className="list-disc ml-5 text-gray-500">
+                    {product.specification?.length > 0 ? (
+                        product.specification.map((spec, index) => (
+                            <li key={index} className="text-sm">{spec}</li>
+                        ))
+                    ) : (
+                        <li className="text-sm">No specifications available.</li>
+                    )}
+                </ul>
             </div>
+
+           
+            <div>
+                <h3 className="font-bold text-sm ">Rating ⭐</h3>
+                <StarRating rating={product.rating} />
+            </div>
+
+          
+            <div className="flex flex-col md:flex-row gap-2 -mt-4  ">
+                <button
+                    onClick={handleAddToCart}
+                    className="btn rounded-3xl bg-[#9538E2] text-white px-3 py-1 text-sm"
+                >
+                    Add to Cart 🛒
+                </button>
+                
+                <button 
+                    onClick={handleAddToWishlist} 
+                    className={`btn rounded-3xl ${isInWishlist ? "bg-gray-300" : "bg-[#9538E2]"} text-white px-3 py-1 text-sm`} 
+                    disabled={isInWishlist}
+                >
+                    {isInWishlist ? "Added to Wishlist" : "Add to Wishlist ♥"}
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
         </>
     );
 };

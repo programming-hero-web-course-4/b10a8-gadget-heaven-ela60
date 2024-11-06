@@ -3,8 +3,9 @@ import { ComposedChart, Area, Bar, XAxis, YAxis, Tooltip, Scatter, Legend, Respo
 
 const Statistics = ({ data }) => {
     return (
-        <div className="p-6 bg-[#9538E2] rounded-lg shadow-md">
+        <div className="p-6 bg-[#9538E2] text-white rounded-lg shadow-md">
             <h2 className="text-2xl font-bold mb-4">Product Price Statistics</h2>
+            {/* Responsive Container with defined height */}
             <ResponsiveContainer width="100%" height={400}>
                 <ComposedChart data={data}>
                     <XAxis dataKey="productName" />

@@ -26,7 +26,7 @@ const ProductCards = () => {
 
   return (
     <>
-      <div className="text-center">
+      <div className=" text-center ">
         <h2 className="text-3xl font-bold">Explore Cutting-Edge Gadgets</h2>
       </div>
       <div className="flex flex-col lg:flex-row gap-6  py-12 mt-[330px] lg:mt-[250px]">
