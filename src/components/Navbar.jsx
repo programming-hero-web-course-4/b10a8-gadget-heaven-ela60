@@ -11,7 +11,7 @@ const Navbar = () => {
   const location = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const navbarBackgroundColor = location.pathname === '/' ? '#9538E2' : 'white text-black';
+  const navbarBackgroundColor = location.pathname === '/' ? '#9538E2' : 'white ';
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
