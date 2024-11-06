@@ -6,7 +6,7 @@
 [Visit Gadget Haven Products](https://remarkable-bombolone-6c0428.netlify.app/)
 
 ## Requirement Document Link
-[View Requirement Document]()
+[View Requirement Document](https://github.com/ProgrammingHero1/B10-A8-gadget-heaven)
 
 ## React Fundamental Concepts Used in the Project
 - **Components**: Functional components are used to create reusable UI elements.

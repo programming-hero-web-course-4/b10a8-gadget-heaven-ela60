@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -26,68 +26,69 @@ const StarRating = ({ rating }) => {
 
 const Details = () => {
     const product = useLoaderData();
-    const { addToCart } = useCart(); 
-    const { addToWishlist, wishlistItems } = useWishlist(); 
+    const { addToCart } = useCart();  
+    const { addToWishlist, wishlistItems } = useWishlist();  
+    // const navigate = useNavigate();  
     
     const isInWishlist = wishlistItems.find(item => item.product === product.product_id);
-    console.log(isInWishlist);
 
-  const handleAddToCart = () => {
-    addToCart();
-    toast.success(`${product.product_title} added to cart!`, {
-      position: "top-right",
-      autoClose: 3000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-    });
-  };
+    
+    const handleAddToCart = () => {
+        addToCart(product);  
+        toast.success(`${product.product_title} added to cart!`, {
+            position: "top-center",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+        });
+    };
 
-  const handleAddToWishlist = () => {
-    if (!isInWishlist) {
-      
-      addToWishlist(product);
-      toast.info(`${product.product_title} added to wishlist!`, {
-        position: "top-right",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-      });
-    }
-  };
 
-  return (
-    <>
-      <ToastContainer />
+    const handleAddToWishlist = () => {
+        if (!isInWishlist) {
+            addToWishlist(product);
+            toast.info(`${product.product_title} added to wishlist!`, {
+                position: "top-center",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+            });
+        }
+    };
 
-      <div className="hero bg-[#9538E2]">
-        <div className="hero-content text-center">
-          <div className="max-w-md">
-            <h1 className="text-5xl font-bold">Product Details</h1>
-            <p className="py-6">Explore the latest gadgets...</p>
-          </div>
-        </div>
-      </div>
-      <div className="flex flex-col items-center py-8 ">
-        <div className="flex flex-col md:flex-row bg-white shadow-lg rounded-lg overflow-hidden ">
-          <div className="md:w-1/2 p-4">
-            <img
-              src={product.product_image}
-              alt={product.product_title}
-              className="w-full  object-cover rounded-lg"
-            />
-          </div>
+    return (
+        <>
+            <ToastContainer />
 
-          <div className="md:w-1/2 p-6 space-y-4">
-            <h2 className="text-3xl font-bold">{product.product_title}</h2>
-            <p className="text-xl font-semibold text-gray-700">
-              Price: ${product.price}
-            </p>
-                      <p>{product.description || "Description not available."}</p>
-                      <div>
+            <div className="hero bg-[#9538E2]">
+                <div className="hero-content text-center">
+                    <div className="max-w-md">
+                        <h1 className="text-xl lg:text-5xl font-bold">Product Details</h1>
+                        <p className="py-6">Explore the latest gadgets...</p>
+                    </div>
+                </div>
+            </div>
+            <div className="relative flex flex-col items-center py-8">
+                <div className="flex flex-col md:flex-row bg-white shadow-lg rounded-lg overflow-hidden">
+                    <div className="md:w-1/2 p-4">
+                        <img
+                            src={product.product_image}
+                            alt={product.product_title}
+                            className="w-full object-cover rounded-lg"
+                        />
+                    </div>
+
+                    <div className="md:w-1/2 p-6 space-y-4">
+                        <h2 className="text-3xl font-bold">{product.product_title}</h2>
+                        <p className="text-xl font-semibold text-gray-700">
+                            Price: ${product.price}
+                        </p>
+                        <p>{product.description || "Description not available."}</p>
+                        <div>
                             <h3 className="font-bold">Specifications:</h3>
                             <ul className="list-disc ml-5 text-gray-600">
                                 {product.specification?.length > 0 ? (
@@ -105,28 +106,27 @@ const Details = () => {
                             <StarRating rating={product.rating} />
                         </div>
 
-            <div className="flex gap-4 mt-8">
-              <button
-                onClick={handleAddToCart}
-                className="btn rounded-3xl bg-[#9538E2] text-white px-4 py-2"
-              >
-                Add to Cart 🛒
-              </button>
+                        <div className="flex flex-col lg:flex-row gap-4 mt-8">
+                            <button
+                                onClick={handleAddToCart}  
+                                className="btn rounded-3xl bg-[#9538E2] text-white px-4 py-2"
+                            >
+                                Add to Cart 🛒
+                            </button>
 
-              <button 
-            onClick={handleAddToWishlist} 
-            className={`btn rounded-3xl ${isInWishlist ? "bg-gray-300" : "bg-[#9538E2]"} text-white px-4 py-2`} 
-            disabled={isInWishlist} 
-        >
-            {isInWishlist ? "Added to Wishlist" : "Add to Wishlist ♥"}
-        </button>
-             
+                            <button 
+                                onClick={handleAddToWishlist} 
+                                className={`btn rounded-3xl ${isInWishlist ? "bg-gray-300" : "bg-[#9538E2]"} text-white px-4 py-2`} 
+                                disabled={isInWishlist} 
+                            >
+                                {isInWishlist ? "Added to Wishlist" : "Add to Wishlist ♥"}
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </>
-  );
+        </>
+    );
 };
 
 export default Details;
