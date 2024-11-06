@@ -4,17 +4,18 @@ import { useWishlist } from "../context/WishlistContext";
 import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
-  const { cartItems, removeFromCart,setCartItems } = useCart();
+  const { cartItems, removeFromCart, setCartItems } = useCart();
   const { wishlistItems, setWishlistItems } = useWishlist();
   const [activeTab, setActiveTab] = useState("Cart");
   const [sortedCartItems, setSortedCartItems] = useState(cartItems);
   const [showModal, setShowModal] = useState(false);
+  const [totalCartPrice, setTotalCartPrice] = useState(0);
   const navigate = useNavigate();
 
-  const totalCartPrice = cartItems.reduce(
-    (total, item) => total + item.price,
-    0
-  );
+  useEffect(() => {
+    const totalPrice = cartItems.reduce((total, item) => total + item.price, 0);
+    setTotalCartPrice(totalPrice);
+  }, [cartItems]);
 
   const handleTabSwitch = (tab) => setActiveTab(tab);
 
@@ -26,8 +27,8 @@ const Dashboard = () => {
 
   // Handle purchase
   const handlePurchase = () => {
-    setShowModal(true);
     setCartItems([]);
+    setShowModal(true);
   };
 
   const closeModal = () => {
@@ -191,7 +192,7 @@ const Dashboard = () => {
             />
             <h2 className="text-2xl font-bold mb-4">Payment Successfully!</h2>
             <p className="text-gray-600 mb-1">Thanks for purchasing.</p>
-            <p className="text-gray-600 mb-3">Total:{totalCartPrice}</p>
+
             <button
               onClick={closeModal}
               className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"
