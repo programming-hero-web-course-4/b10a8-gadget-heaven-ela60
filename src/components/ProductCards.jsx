@@ -27,9 +27,9 @@ const ProductCards = () => {
   return (
     <>
       <div className=" text-center ">
-        <h2 className="text-3xl font-bold mt-56">Explore Cutting-Edge Gadgets</h2>
+        <h2 className="text-3xl font-bold mt-52">Explore Cutting-Edge Gadgets</h2>
       </div>
-      <div className="flex flex-col lg:flex-row gap-6  py-12 mt-[240px] lg:mt-[250px]">
+      <div className="flex flex-col lg:flex-row gap-6  py-12  lg:-mt-[20px]">
         <div
           role="tablist"
           className="tabs tabs-boxed lg:w-1/4 border  flex flex-col gap-4 py-12 items-center font-semibold"
