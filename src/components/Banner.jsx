@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Banner = () => {
     return (
         <div className="relative hero bg-[#9538E2] min-h-screen  lg:-top-[48px]">
@@ -13,7 +15,8 @@ const Banner = () => {
       Explore the latest gadgets that will take your experience to the next level. From smart devices to <br /> the coolest accessories, we have it all!
     </p>
     <button className="btn rounded-3xl px-8 sm:px-10 md:px-12 py-2 sm:py-3 bg-white text-[#9538E2] font-bold">
-      Shop Now
+              <Link to="/dashboard"
+              > Shop Now</Link>
     </button>
   </div>
 </div>
